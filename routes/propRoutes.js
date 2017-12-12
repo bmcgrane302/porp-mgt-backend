@@ -48,7 +48,7 @@ router.patch('/:id/update', (req, res) => {
     )
 })
 //rent paid true
-router.patch('/:id/paid', (req, res) => {
+router.patch('/paid/:id', (req, res) => {
   knex('properties')
     .update({
       rent_paid: true
@@ -57,14 +57,13 @@ router.patch('/:id/paid', (req, res) => {
     .then(()=>{
       knex('properties')
       .select()
-      .where('id', req.params.id)
       .then(property => res.send(property))
     }
 
     )
 })
 //rent paid false
-router.patch('/:id/unpaid', (req, res) => {
+router.patch('/unpaid/:id', (req, res) => {
   knex('properties')
     .update({
       rent_paid: false
@@ -73,7 +72,6 @@ router.patch('/:id/unpaid', (req, res) => {
     .then(()=>{
       knex('properties')
       .select()
-      .where('id', req.params.id)
       .then(property => res.send(property))
     }
 
@@ -96,7 +94,7 @@ router.patch('/:id/addrepair', (req, res) => {
     )
 })
 //remove repair
-router.patch('/:id/removerepair', (req, res) => {
+router.patch('/removerepair/:id', (req, res) => {
   knex('properties')
     .update({
       repairs: false
@@ -105,7 +103,6 @@ router.patch('/:id/removerepair', (req, res) => {
     .then(()=>{
       knex('properties')
       .select()
-      .where('id', req.params.id)
       .then(property => res.send(property))
     }
 
@@ -128,7 +125,7 @@ router.patch('/:id/addrenewal', (req, res) => {
     )
 })
 
-router.patch('/:id/removerenewal', (req, res) => {
+router.patch('/removerenewal/:id', (req, res) => {
   knex('properties')
     .update({
       renewal_notice: false
@@ -137,7 +134,6 @@ router.patch('/:id/removerenewal', (req, res) => {
     .then(()=>{
       knex('properties')
       .select()
-      .where('id', req.params.id)
       .then(property => res.send(property))
     }
 
