@@ -31,7 +31,6 @@ router.delete('/:id', (req, res) => {
     .then(() => {
       knex('properties')
         .select()
-        .where('id', req.params.id)
         .then(property => res.send(property))
     })
 })
