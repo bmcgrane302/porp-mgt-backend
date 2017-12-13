@@ -35,14 +35,14 @@ router.delete('/:id', (req, res) => {
     })
 })
 //update property
-router.patch('/:id/update', (req, res) => {
+router.patch('/update/:id', (req, res) => {
+  console.log("req.body", req.body)
   knex('properties')
     .update(req.body)
     .where('id', req.params.id)
     .then(() => {
         knex('properties')
           .select()
-          .where('id', req.params.id)
           .then(property => res.send(property))
       }
     )
