@@ -7,6 +7,8 @@ exports.up = function(knex, Promise) {
     table.string('city').notNullable();
     table.string('state').notNullable();
     table.integer('zipcode').notNullable();
+    table.string('fname').notNullable();
+    table.string('lname').notNullable();
     table.decimal('mortgage');
     table.decimal('property_tax');
     table.decimal('property_insurance');
@@ -17,6 +19,9 @@ exports.up = function(knex, Promise) {
     table.boolean('renewal_notice').defaultTo('false');
     table.boolean('repairs').defaultTo('false');
     table.string('repair_description').notNullable().defaultTo('');
+    table.decimal('ytd_repairs');
+    table.decimal('ytd_mortgage');
+    table.decimal('ytd_rent');
     table.timestamps(true, true);
   })
 };
