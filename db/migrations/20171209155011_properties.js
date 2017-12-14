@@ -19,6 +19,7 @@ exports.up = function(knex, Promise) {
     table.boolean('renewal_notice').defaultTo('false');
     table.boolean('repairs').defaultTo('false');
     table.string('repair_description').defaultTo('');
+    table.decimal('repair_amount');
     table.decimal('ytd_repairs');
     table.decimal('ytd_mortgage');
     table.decimal('ytd_rent');

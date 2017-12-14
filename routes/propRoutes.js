@@ -78,7 +78,7 @@ router.patch('/unpaid/:id', (req, res) => {
     )
 })
 //add repair
-router.patch('/:id/addrepair', (req, res) => {
+router.patch('/addrepair/:id', (req, res) => {
   knex('properties')
     .update({
       repairs: true
@@ -87,7 +87,6 @@ router.patch('/:id/addrepair', (req, res) => {
     .then(()=>{
       knex('properties')
       .select()
-      .where('id', req.params.id)
       .then(property => res.send(property))
     }
 
