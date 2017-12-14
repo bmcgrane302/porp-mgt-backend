@@ -3,7 +3,7 @@ exports.up = function(knex, Promise) {
   return knex.schema.createTable('properties', (table)=> {
     table.increments();
     table.string('address').notNullable();
-    table.string('unit').defaultTo("none");
+    table.string('unit').defaultTo("");
     table.string('city').notNullable();
     table.string('state').notNullable();
     table.integer('zipcode').notNullable();
@@ -18,7 +18,7 @@ exports.up = function(knex, Promise) {
     table.boolean('rent_paid').defaultTo('true');
     table.boolean('renewal_notice').defaultTo('false');
     table.boolean('repairs').defaultTo('false');
-    table.string('repair_description').notNullable().defaultTo('');
+    table.string('repair_description').defaultTo('');
     table.decimal('ytd_repairs');
     table.decimal('ytd_mortgage');
     table.decimal('ytd_rent');
