@@ -22,6 +22,7 @@ exports.seed = function(knex, Promise) {
          renewal_notice: false,
          repairs: false,
          repair_description:'none',
+         repair_amount: 0,
          ytd_repairs: 200.00,
          ytd_mortgage: 4000.00,
          ytd_rent: 6000.00,
