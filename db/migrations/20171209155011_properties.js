@@ -22,6 +22,8 @@ exports.up = function(knex, Promise) {
     table.decimal('repair_amount');
     table.decimal('ytd_repairs');
     table.decimal('ytd_mortgage');
+    table.decimal('ytd_prop_tax');
+    table.decimal('ytd_prop_ins');
     table.decimal('ytd_rent');
     table.timestamps(true, true);
   })

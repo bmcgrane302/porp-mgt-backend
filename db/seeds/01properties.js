@@ -25,6 +25,8 @@ exports.seed = function(knex, Promise) {
          repair_amount: 0,
          ytd_repairs: 200.00,
          ytd_mortgage: 4000.00,
+         ytd_prop_tax: 300.00,
+         ytd_prop_ins: 150.30,
          ytd_rent: 6000.00,
          },
          {address: '4706 Twinleaf',
@@ -47,6 +49,8 @@ exports.seed = function(knex, Promise) {
           repair_amount: 0,
           ytd_repairs: 130.00,
           ytd_mortgage: 2600.00,
+          ytd_prop_tax: 220.00,
+          ytd_prop_ins: 101.90,
           ytd_rent: 4000.00,
         },
         {address: '8955 Grenadier',
@@ -69,6 +73,8 @@ exports.seed = function(knex, Promise) {
          repair_amount: 0,
          ytd_repairs: 130.00,
          ytd_mortgage: 2600.00,
+         ytd_prop_tax: 500.00,
+         ytd_prop_ins: 350.70,
          ytd_rent: 4000.00,
        }
       ]);
