@@ -94,10 +94,13 @@ router.patch('/addrepair/:id', (req, res) => {
 })
 //remove repair
 router.patch('/removerepair/:id', (req, res) => {
+  console.log('repairs', req.body.ytd_repairs);
   knex('properties')
     .update({
       repairs: false,
-      repair_description: ''
+      repair_description: '',
+      repair_amount: 0,
+      ytd_repairs: req.body.ytd_repairs
     })
     .where('id', req.params.id)
     .then(()=>{
