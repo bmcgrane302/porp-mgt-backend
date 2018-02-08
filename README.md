@@ -45,3 +45,9 @@ Repository. If you would like to *implement* a new feature, please submit an iss
 
 ## License
 MIT
+
+## Landlord backend
+
+## Tech
+  * Node JS
+  * Kenx
