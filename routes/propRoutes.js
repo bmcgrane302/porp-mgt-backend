@@ -54,7 +54,9 @@ router.patch('/paid/:id', (req, res) => {
     .update({
       rent_paid: true,
       ytd_rent: req.body.ytd_rent,
-      ytd_mortgage: req.body.ytd_mortgage
+      ytd_mortgage: req.body.ytd_mortgage,
+      ytd_prop_ins: req.body.ytd_prop_ins,
+      ytd_prop_tax: req.body.ytd_prop_tax
     })
     .where('id', req.params.id)
     .then(()=>{
