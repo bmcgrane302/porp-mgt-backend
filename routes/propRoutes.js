@@ -49,9 +49,12 @@ router.patch('/update/:id', (req, res) => {
 })
 //rent paid true
 router.patch('/paid/:id', (req, res) => {
+  console.log('mortgage', req.body.ytd_mortgage);
   knex('properties')
     .update({
-      rent_paid: true
+      rent_paid: true,
+      ytd_rent: req.body.ytd_rent,
+      ytd_mortgage: req.body.ytd_mortgage
     })
     .where('id', req.params.id)
     .then(()=>{
@@ -94,7 +97,7 @@ router.patch('/addrepair/:id', (req, res) => {
 })
 //remove repair
 router.patch('/removerepair/:id', (req, res) => {
-  console.log('repairs', req.body.ytd_repairs);
+
   knex('properties')
     .update({
       repairs: false,
